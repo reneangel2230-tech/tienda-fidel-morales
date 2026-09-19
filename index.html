@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Fidel Morales — Libros del Negociador Emprendedor</title>
+  <meta name="description" content="Libros de Fidel Morales D. Técnicas prácticas para emprendedores y negociadores. Curso Práctico del Negociador Emprendedor y más.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">
+        <img class="brand-logo" src="img/logo-editorial.jpg" alt="Logo Editorial La Inspiración" onerror="this.style.display='none'">
+        <span class="brand-mark">FM</span>
+        <span class="brand-text">
+          <strong id="nav-tienda">Tienda Fidel Morales</strong>
+          <small id="nav-editorial">Editorial La Inspiración</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#libros">Libros</a>
+        <a href="#autor">El autor</a>
+        <a href="#como-pedir">Cómo pedir</a>
+        <a class="btn btn-wa btn-sm" id="nav-wa" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Inicio -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Editorial La Inspiración · Panamá</p>
+          <h1>Aprende a negociar y <em>cierra negocios</em> con técnica.</h1>
+          <p class="hero-sub">Libros de <strong>Fidel Morales D.</strong> con técnicas prácticas acumuladas a través de los años para emprendedores, vendedores y asesores.</p>
+          <div class="hero-actions">
+            <a href="#libros" class="btn btn-primary">Ver los libros</a>
+            <a href="#autor" class="btn btn-ghost">Conocer al autor</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="big-book" id="hero-portada"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Libros -->
+    <section class="section" id="libros">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Catálogo</p>
+          <h2>Libros del autor</h2>
+        </header>
+        <div class="libros" id="listado-libros"><!-- render JS --></div>
+      </div>
+    </section>
+
+    <!-- Autor -->
+    <section class="section section-alt" id="autor">
+      <div class="container">
+        <div class="autor-grid">
+          <div class="autor-foto" id="autor-foto">
+            <img src="img/fidel.jpg" alt="Foto de Fidel Morales" onerror="this.style.display='none'">
+            <span class="autor-iniciales" aria-hidden="true">FM</span>
+          </div>
+          <div class="autor-copy">
+            <p class="eyebrow">El autor</p>
+            <h2>Fidel Morales D.</h2>
+            <p>Apasionado por el arte de la negociación y la formación de emprendedores, Fidel Morales reúne en sus obras técnicas prácticas que ha acumulado a través de los años y que han sido influenciadas por grandes maestros del desarrollo personal y las ventas.</p>
+            <p>Sus cursos enseñan una secuencia ordenada para guiar al cliente hacia la compra: descubrir necesidades, apoyarlas con beneficios reales y cerrar negocios con confianza.</p>
+            <p class="autor-editorial">Publica bajo el sello <strong id="autor-editorial">Editorial La Inspiración</strong>.</p>
+            <figure class="recorte" id="recorte-prensa">
+              <img src="img/recorte-periodico.jpg" alt="Recorte de prensa: reseña del trabajo de Fidel Morales" onerror="this.parentElement.style.display='none'">
+              <figcaption>Reseña de prensa sobre el trabajo de Fidel Morales</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como pedir -->
+    <section class="section" id="como-pedir">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Venta directa</p>
+          <h2>¿Cómo pedir tu libro?</h2>
+        </header>
+        <ol class="pasos">
+          <li><span class="paso-num">1</span><div><strong>Elige tu libro</strong><p>Escoge el formato: físico o digital.</p></div></li>
+          <li><span class="paso-num">2</span><div><strong>Selecciona la cantidad</strong><p>Cuántas copias deseas.</p></div></li>
+          <li><span class="paso-num">3</span><div><strong>Confirma en WhatsApp</strong><p>El pedido llega listo a nuestro WhatsApp y te indicamos el precio y la forma de entrega o envío.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section section-foot">
+      <div class="container">
+        <h2>¿Dudas o ventas al mayor?</h2>
+        <p class="foot-sub">Escríbenos por WhatsApp y con gusto te atendemos.</p>
+        <a class="btn btn-wa btn-lg" id="wa-contacto" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.1.2 2.2 3.4 5.4 4.7 2.5 1.1 3.1 1.2 4.1 1 .7-.1 1.7-.7 2-1.2.2-.6.2-1.1.2-1.2-.1-.2-.4-.3-.7-.4zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Tienda Fidel Morales</strong> · Editorial La Inspiración · Hecho con esperanza en Panamá</p>
+      <p class="footer-meta" id="footer-meta"></p>
+    </div>
+  </footer>
+
+  <script src="js/libros.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

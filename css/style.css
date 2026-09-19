@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Estilos de la Tienda Fidel Morales
+   Paleta: azul noche + tinta + nota editorial
+   ========================================================================== */
+
+:root {
+  --ink: #1c2333;
+  --ink-soft: #3d4659;
+  --paper: #faf7f2;
+  --paper-alt: #efe9dd;
+  --gold: #b98a2f;
+  --gold-soft: #d9b763;
+  --wa: #1faa53;
+  --white: #ffffff;
+  --shadow: 0 14px 40px rgba(28, 35, 51, 0.16);
+  --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, "Times New Roman", serif; }
+
+/* ---------- Encabezado ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(28, 35, 51, 0.08);
+}
+
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+
+.brand-logo { width: 38px; height: 38px; object-fit: contain; }
+
+.brand-mark {
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--ink) 0%, #2c3a55 100%);
+  color: #fff; font-family: "Playfair Display", serif; font-weight: 800; font-size: 18px;
+  box-shadow: var(--shadow);
+}
+
+.brand-text { display: flex; flex-direction: column; line-height: 1.25; }
+.brand-text strong { font-size: 17px; }
+.brand-text small { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: 0.4px; }
+
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav > a:not(.btn) { color: var(--ink-soft); text-decoration: none; font-size: 14.5px; font-weight: 500; }
+.nav > a:not(.btn):hover { color: var(--ink); }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 12px 22px; border-radius: 999px;
+  font-size: 15px; font-weight: 600; text-decoration: none;
+  border: 2px solid transparent; cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:active { transform: scale(0.98); }
+
+.btn-primary { background: var(--ink); color: #fff; box-shadow: var(--shadow); }
+.btn-primary:hover { background: #2c3a55; }
+
+.btn-ghost { background: transparent; color: var(--ink); border-color: rgba(28, 35, 51, 0.35); }
+.btn-ghost:hover { border-color: var(--ink); }
+
+.btn-wa { background: var(--wa); color: #fff; box-shadow: 0 10px 26px rgba(31, 170, 83, 0.35); }
+.btn-wa:hover { background: #189a49; }
+.btn-wa:disabled { background: #9cbfa9; box-shadow: none; cursor: not-allowed; }
+
+.btn-sm { padding: 9px 16px; font-size: 13.5px; }
+.btn-lg { padding: 15px 30px; font-size: 16px; }
+
+/* ---------- Hero ---------- */
+.hero { background: linear-gradient(180deg, var(--paper-alt) 0%, var(--paper) 100%); }
+.hero-inner {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px;
+  align-items: center; padding: 72px 24px 64px;
+}
+
+.eyebrow {
+  text-transform: uppercase; letter-spacing: 2px; font-size: 12.5px; font-weight: 700;
+  color: var(--gold); margin-bottom: 12px;
+}
+
+.hero h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.1; margin-bottom: 18px; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+
+.hero-sub { font-size: 17.5px; color: var(--ink-soft); max-width: 46ch; }
+.hero-actions { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-art { display: flex; justify-content: center; }
+
+.big-book {
+  width: 230px; aspect-ratio: 11 / 17;
+  border-radius: 8px 16px 16px 8px;
+  background-size: cover; background-position: center;
+  box-shadow: 22px 26px 60px rgba(28, 35, 51, 0.35);
+  position: relative;
+}
+.big-book::after {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px 0 0 8px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.22), rgba(0,0,0,0.02));
+}
+
+.book-generic {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  background: linear-gradient(160deg, #2c3a55 0%, var(--ink) 70%);
+  color: #fff; padding: 22px 18px;
+}
+.book-generic h4 { font-size: 21px; line-height: 1.15; margin-bottom: 6px; }
+.book-generic p { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.75; }
+
+/* ---------- Secciones ---------- */
+.section { padding: 72px 0; }
+.section-alt { background: var(--paper-alt); }
+.section-head { text-align: center; margin-bottom: 44px; }
+.section-head h2 { font-size: clamp(28px, 3.6vw, 40px); }
+
+/* ---------- Tarjetas de libro ---------- */
+.libros { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
+
+.libro-card {
+  background: var(--white); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.libro-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(28, 35, 51, 0.22); }
+
+.libro-portada {
+  aspect-ratio: 11 / 17; width: 100%;
+  background-size: cover; background-position: center;
+  position: relative;
+}
+
+.libro-cuerpo { padding: 26px 26px 8px; }
+.libro-meta { font-size: 12px; color: var(--gold); font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.libro-titulo { font-size: 23px; line-height: 1.2; margin: 8px 0 10px; }
+.libro-subtitulo { font-size: 14.5px; font-style: italic; color: var(--gold); margin: -6px 0 10px; }
+.libro-resumen {
+  font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px;
+  display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.libro-cap-list { margin: 0 0 16px; }
+.libro-cap-list summary {
+  cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--ink);
+}
+.libro-cap-list ul { list-style: none; margin-top: 10px; }
+.libro-cap-list li {
+  font-size: 13.5px; color: var(--ink-soft); padding: 6px 0 6px 22px; position: relative;
+  border-top: 1px dashed rgba(28, 35, 51, 0.12);
+}
+.libro-cap-list li:first-child { border-top: none; }
+.libro-cap-list li::before {
+  content: ""; position: absolute; left: 4px; top: 15px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold-soft);
+}
+
+.libro-acciones { border-top: 1px solid rgba(28, 35, 51, 0.1); padding: 20px 26px 24px; margin-top: auto; }
+
+.precio-line { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.precio { font-family: "Playfair Display", serif; font-size: 26px; font-weight: 800; }
+.precio-por-confirmar { font-size: 14px; font-weight: 600; color: var(--gold); }
+
+.formato-opts { display: flex; gap: 10px; margin-bottom: 14px; }
+.formato-opts label {
+  flex: 1; text-align: center; padding: 10px 12px; border-radius: 10px;
+  border: 2px solid rgba(28, 35, 51, 0.15); font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all 0.12s ease; user-select: none;
+}
+.formato-opts input { display: none; }
+.formato-opts label:has(input:checked) {
+  border-color: var(--wa); background: rgba(31, 170, 83, 0.08); color: var(--wa);
+}
+
+.cantidad-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.cantidad-row span { font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.cantidad-input {
+  width: 68px; padding: 8px 10px; border-radius: 10px;
+  border: 2px solid rgba(28, 35, 51, 0.15); font-size: 15px; font-weight: 600; text-align: center;
+}
+
+.btn-pedir { width: 100%; }
+
+.btn-amazon { width: 100%; margin-top: 8px; }
+.btn-pay { width: 100%; margin-top: 8px; }
+.btn-outline {
+  background: transparent; color: var(--ink);
+  border-color: rgba(28, 35, 51, 0.28);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- Autor ---------- */
+.autor-grid { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center; }
+.autor-foto {
+  aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden;
+  background: linear-gradient(160deg, #2c3a55, var(--ink));
+  display: grid; place-items: center; box-shadow: var(--shadow);
+  position: relative;
+}
+.autor-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.autor-iniciales { font-family: "Playfair Display", serif; font-size: 76px; font-weight: 800; color: rgba(255,255,255,0.85); }
+.autor-copy h2 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 14px; }
+.autor-copy p { color: var(--ink-soft); margin-bottom: 14px; font-size: 15.5px; }
+.autor-editorial { color: var(--ink); background: rgba(255,255,255,0.6); padding: 12px 16px; border-radius: 10px; }
+
+.recorte { margin-top: 20px; padding: 14px; background: var(--white); border-radius: 10px; box-shadow: var(--shadow); }
+.recorte img { display: block; width: 100%; max-height: 320px; object-fit: contain; border-radius: 6px; }
+.recorte figcaption { font-size: 12.5px; color: var(--ink-soft); text-align: center; margin-top: 10px; }
+
+/* ---------- Pasos ---------- */
+.pasos { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; counter-reset: paso; }
+.pasos li {
+  background: var(--white); border-radius: var(--radius); padding: 26px;
+  box-shadow: var(--shadow); position: relative;
+}
+.paso-num {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--ink); color: #fff; font-weight: 800; font-family: "Playfair Display", serif; font-size: 20px;
+  margin-bottom: 16px;
+}
+.pasos strong { font-size: 16.5px; }
+.pasos p { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ---------- Pie de llamada ---------- */
+.section-foot { text-align: center; background: var(--ink); color: #fff; }
+.section-foot h2 { color: #fff; font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 8px; }
+.foot-sub { opacity: 0.8; margin-bottom: 24px; }
+
+/* ---------- Footer ---------- */
+.site-footer { padding: 26px 0; border-top: 1px solid rgba(28, 35, 51, 0.1); background: var(--paper); }
+.footer-inner { text-align: center; font-size: 13.5px; color: var(--ink-soft); }
+.footer-meta { margin-top: 4px; font-size: 12px; opacity: 0.75; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 48px 24px; text-align: center; }
+  .hero-sub { margin: 0 auto; }
+  .hero-actions, .autor-grid, .pasos { justify-content: center; }
+  .autor-grid { grid-template-columns: 1fr; }
+  .autor-foto { max-width: 280px; margin: 0 auto; }
+  .pasos { grid-template-columns: 1fr; }
+  .nav > a:not(.btn) { display: none; }
+}
