@@ -203,6 +203,7 @@ h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, "Times New Roman"
 
 .btn-amazon { width: 100%; margin-top: 8px; }
 .btn-pay { width: 100%; margin-top: 8px; }
+.btn-pay2 { width: 100%; margin-top: 8px; }
 .btn-outline {
   background: transparent; color: var(--ink);
   border-color: rgba(28, 35, 51, 0.28);

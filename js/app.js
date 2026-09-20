@@ -87,7 +87,8 @@
       '<div class="cantidad-row"><span>Cantidad</span>' +
       '<input class="cantidad-input" type="number" min="1" max="20" value="1" inputmode="numeric"></div>' +
       '<button class="btn btn-wa btn-pedir" type="button">Pedir por WhatsApp</button>' +
-      '<a class="btn btn-outline btn-pay" href="#" target="_blank" rel="noopener" style="display:none;">Pagar en línea</a>' +
+      '<a class="btn btn-outline btn-pay" href="#" target="_blank" rel="noopener" style="display:none;">Pagar con PayPal</a>' +
+      '<a class="btn btn-outline btn-pay2" href="#" target="_blank" rel="noopener" style="display:none;">Pagar por Yappy</a>' +
       "</div>";
 
     var cantidadInput = tarjeta.querySelector(".cantidad-input");
@@ -148,37 +149,42 @@
     var nombreFormato = 'formato-' + (libro.id || indice);
     var radios = tarjeta.querySelectorAll('input[name="' + nombreFormato + '"]');
     var btnPay = tarjeta.querySelector(".btn-pay");
+    var btnPay2 = tarjeta.querySelector(".btn-pay2");
 
     function actualizarPago() {
       var t = window.TIENDA || {};
       if (!btnPay) return;
-      var parar = true;
-      if ((t.paypal || t.yappy)) {
-        var f = tarjeta.querySelector('input[name="' + nombreFormato + '"]:checked');
-        var formato = f ? f.value : "fisico";
-        var precio = formato === "digital" ? libro.precioDigital : libro.precioFisico;
-        if (t.paypal && typeof precio === "number") {
-          btnPay.href = "https://www.paypal.me/" + t.paypal + "/" + precio;
-          btnPay.textContent = "Pagar con PayPal";
-          parar = false;
-        } else if (t.yappy) {
-          var yappyS = String(t.yappy);
-          if (/^https?:\/\//.test(yappyS)) {
-            btnPay.href = yappyS;
-            btnPay.textContent = "Pagar con Yappy";
-          } else {
-            var montoDesc = typeof precio === "number" ? "$" + precio.toFixed(2) : "el precio del libro";
-            var msgPago =
-              'Hola, quiero pagar ' + montoDesc + ' del libro "' + libro.titulo + '" (' +
-              (formato === "digital" ? "digital" : "físico") +
-              ") por Yappy al número " + yappyS + ". Aquí te envío el comprobante de pago.";
-            btnPay.href = waLink(msgPago);
-            btnPay.textContent = "Pagar por Yappy (" + yappyS + ")";
-          }
-          parar = false;
-        }
+      var f = tarjeta.querySelector('input[name="' + nombreFormato + '"]:checked');
+      var formato = f ? f.value : "fisico";
+      var precio = formato === "digital" ? libro.precioDigital : libro.precioFisico;
+      var okPP = false;
+      var okY = false;
+
+      if (t.paypal && typeof precio === "number") {
+        btnPay.href = "https://www.paypal.me/" + t.paypal + "/" + precio;
+        btnPay.textContent = "Pagar con PayPal";
+        okPP = true;
       }
-      btnPay.style.display = parar ? "none" : "";
+
+      if (t.yappy) {
+        var yappyS = String(t.yappy);
+        if (/^https?:\/\//.test(yappyS)) {
+          btnPay2.href = yappyS;
+          btnPay2.textContent = "Pagar con Yappy";
+        } else {
+          var montoDesc = typeof precio === "number" ? "$" + precio.toFixed(2) : "el precio del libro";
+          var msgPago =
+            'Hola, quiero pagar ' + montoDesc + ' del libro "' + libro.titulo + '" (' +
+            (formato === "digital" ? "digital" : "físico") +
+            ") por Yappy al número " + yappyS + ". Aquí te envío el comprobante de pago.";
+          btnPay2.href = waLink(msgPago);
+          btnPay2.textContent = "Pagar por Yappy (" + yappyS + ")";
+        }
+        okY = true;
+      }
+
+      btnPay.style.display = okPP ? "" : "none";
+      btnPay2.style.display = okY ? "" : "none";
     }
 
     radios.forEach(function (radio) {
