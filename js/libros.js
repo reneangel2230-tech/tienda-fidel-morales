@@ -25,11 +25,13 @@ var TIENDA = {
   /* PAGO EN LINEA:
      - paypal: tu usuario de PayPal.me sin @ (ej. "FidelMorales"). Genera el
        boton "Pagar con PayPal" con el monto exacto de cada libro.
-     - yappy: tu link de cobro Yappy (ej. "https://www.yappy.com.pa/payment-link/XXXX").
-       Genera el boton "Pagar con Yappy" (el cliente indica el monto).
+     - yappy: opcion 2 (manual): el numero de Yappy del vendedor, ej. "6615-9319".
+       El boton "Pagar por Yappy" abre WhatsApp con el mensaje de pago y el
+       comprobante, para que el comprador pague en la app Yappy y te envie el recibo.
+       Tambien acepta un link completo https://... (link de pago Yappy de ser el caso).
      Deja los dos vacios "" para ocultar el pago en linea. */
   paypal: "",
-  yappy: ""
+  yappy: "6615-9319"
 };
 
 var LIBROS = [

@@ -162,8 +162,19 @@
           btnPay.textContent = "Pagar con PayPal";
           parar = false;
         } else if (t.yappy) {
-          btnPay.href = t.yappy;
-          btnPay.textContent = "Pagar con Yappy";
+          var yappyS = String(t.yappy);
+          if (/^https?:\/\//.test(yappyS)) {
+            btnPay.href = yappyS;
+            btnPay.textContent = "Pagar con Yappy";
+          } else {
+            var montoDesc = typeof precio === "number" ? "$" + precio.toFixed(2) : "el precio del libro";
+            var msgPago =
+              'Hola, quiero pagar ' + montoDesc + ' del libro "' + libro.titulo + '" (' +
+              (formato === "digital" ? "digital" : "físico") +
+              ") por Yappy al número " + yappyS + ". Aquí te envío el comprobante de pago.";
+            btnPay.href = waLink(msgPago);
+            btnPay.textContent = "Pagar por Yappy (" + yappyS + ")";
+          }
           parar = false;
         }
       }
