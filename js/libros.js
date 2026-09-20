@@ -30,7 +30,7 @@ var TIENDA = {
        comprobante, para que el comprador pague en la app Yappy y te envie el recibo.
        Tambien acepta un link completo https://... (link de pago Yappy de ser el caso).
      Deja los dos vacios "" para ocultar el pago en linea. */
-  paypal: "ReneAngelBecerra",
+  paypal: "", // se activa cuando exista tu paypal.me real, ej. "ReneAngelBecerra"
   yappy: "6615-9319"
 };
 
