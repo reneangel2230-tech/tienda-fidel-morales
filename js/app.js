@@ -262,9 +262,42 @@
     }
   }
 
+  function initFormulario() {
+    var form = document.getElementById("form-editorial");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nombre = document.getElementById("f-nombre").value.trim();
+      var contacto = document.getElementById("f-contacto").value.trim();
+      var interes = document.getElementById("f-interes").value;
+      var mensaje = document.getElementById("f-mensaje").value.trim();
+      if (!nombre || !contacto) {
+        alert("Por favor completa tu nombre y tu WhatsApp o correo.");
+        return;
+      }
+      var lineas = [
+        "Hola, les escribo desde la página de Editorial La Inspiración.",
+        "Nombre: " + nombre,
+        "Contacto: " + contacto,
+        "Me interesa: " + interes
+      ];
+      if (mensaje) lineas.push("Mensaje: " + mensaje);
+      lineas.push("¿Me pueden ayudar, por favor?");
+      var link = waLink(lineas.join("\n"));
+      if (link === "#") {
+        var btn = form.querySelector("button");
+        btn.textContent = "Configurar número de WhatsApp";
+        btn.disabled = true;
+        return;
+      }
+      window.open(link, "_blank", "noopener");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     configInicial();
     renderLibros();
+    initFormulario();
   });
 
   // Soporte si libs se cargan despues del DOMListo

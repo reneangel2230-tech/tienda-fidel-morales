@@ -26,6 +26,7 @@
       <nav class="nav" aria-label="Principal">
         <a href="#libros">Libros</a>
         <a href="#autor">El autor</a>
+        <a href="#editorial">La editorial</a>
         <a href="#como-pedir">Cómo pedir</a>
         <a class="btn btn-wa btn-sm" id="nav-wa" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
       </nav>
@@ -82,6 +83,46 @@
               <figcaption>Reseña de prensa sobre el trabajo de Fidel Morales</figcaption>
             </figure>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial -->
+    <section class="section section-alt" id="editorial">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Editorial La Inspiración</p>
+          <h2>La casa oficial del escritor y conferencista Fidel Morales</h2>
+        </header>
+        <div class="editorial-grid">
+          <div class="editorial-copy">
+            <p><strong>Editorial La Inspiración</strong> es la casa oficial del escritor y conferencista <strong>Fidel Morales</strong>. Aquí encontrarás sus libros en nuestra página web, con ediciones dirigidas a jóvenes graduandos, aprobadas por el MEDUCA, y para público en general.</p>
+            <p>Además, <strong>te ayudamos con tu proyecto de edición, maquetado y revisión</strong> de tu idea o de tu proyecto de libro, a un precio bien razonable que te sorprenderá.</p>
+            <p>Envíanos el formulario con tus datos y el producto que te interesaría — por ejemplo, comprar libros o apoyo en tu proyecto de libro — y con gusto te atendemos.</p>
+          </div>
+          <form class="form-editorial" id="form-editorial" novalidate>
+            <div class="form-grid">
+              <label>Nombre completo
+                <input type="text" id="f-nombre" required placeholder="Tu nombre">
+              </label>
+              <label>WhatsApp o correo
+                <input type="text" id="f-contacto" required placeholder="Ej. 6123-4567 o correo">
+              </label>
+            </div>
+            <label>¿Qué te interesa?
+              <select id="f-interes">
+                <option>Comprar libros</option>
+                <option>Apoyo en la edición de mi libro</option>
+                <option>Maquetado y revisión de mi libro</option>
+                <option>Otro proyecto editorial</option>
+              </select>
+            </label>
+            <label>Tu mensaje (opcional)
+              <textarea id="f-mensaje" rows="3" placeholder="Cuéntanos tu idea o tu pedido"></textarea>
+            </label>
+            <button class="btn btn-wa btn-lg" type="submit">Enviar por WhatsApp</button>
+            <p class="form-note">Tu mensaje llega directo a nuestro WhatsApp y te respondemos a la brevedad.</p>
+          </form>
         </div>
       </div>
     </section>

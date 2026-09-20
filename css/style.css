@@ -242,7 +242,27 @@ h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, "Times New Roman"
 .pasos strong { font-size: 16.5px; }
 .pasos p { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
 
-/* ---------- Pie de llamada ---------- */
+/* ---------- Editorial / Formulario ---------- */
+.editorial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: start; }
+.editorial-copy p { font-size: 15.5px; margin-bottom: 14px; color: var(--ink-soft); }
+.editorial-copy strong { color: var(--ink); }
+.form-editorial {
+  background: var(--white); border-radius: var(--radius); padding: 26px;
+  box-shadow: var(--shadow); display: grid; gap: 14px;
+}
+.form-editorial label { display: grid; gap: 6px; font-size: 13px; font-weight: 600; color: var(--ink); }
+.form-editorial input,
+.form-editorial select,
+.form-editorial textarea {
+  font-family: inherit; font-size: 14.5px; color: var(--ink);
+  background: var(--paper); border: 1px solid rgba(28, 35, 51, 0.15);
+  border-radius: 10px; padding: 11px 12px; outline: none; transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-editorial input:focus,
+.form-editorial select:focus,
+.form-editorial textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(185, 138, 47, 0.18); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-note { font-size: 12.5px; color: var(--ink-soft); opacity: 0.8; }
 .section-foot { text-align: center; background: var(--ink); color: #fff; }
 .section-foot h2 { color: #fff; font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 8px; }
 .foot-sub { opacity: 0.8; margin-bottom: 24px; }
@@ -260,5 +280,6 @@ h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, "Times New Roman"
   .autor-grid { grid-template-columns: 1fr; }
   .autor-foto { max-width: 280px; margin: 0 auto; }
   .pasos { grid-template-columns: 1fr; }
+  .editorial-grid, .form-grid { grid-template-columns: 1fr; }
   .nav > a:not(.btn) { display: none; }
 }
