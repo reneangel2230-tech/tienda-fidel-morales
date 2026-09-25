@@ -96,6 +96,12 @@ h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, "Times New Roman"
   color: var(--gold); margin-bottom: 12px;
 }
 
+.hero-tag {
+  text-transform: uppercase; letter-spacing: 1px; font-size: 13px; font-weight: 800;
+  color: var(--ink); background: var(--gold-soft); border-radius: 999px;
+  display: inline-block; padding: 7px 16px; margin-bottom: 14px;
+}
+
 .hero h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.1; margin-bottom: 18px; }
 .hero h1 em { font-style: italic; color: var(--gold); }
 
