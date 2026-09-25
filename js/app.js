@@ -209,6 +209,10 @@
 
   function configInicial() {
     var t = window.TIENDA || {};
+    var navTienda = document.getElementById("nav-tienda");
+    if (navTienda && t.nombre) navTienda.textContent = t.nombre;
+    var navEd = document.getElementById("nav-editorial");
+    if (navEd) navEd.textContent = t.subtitulo || t.editorial || "";
     var autorEd = document.getElementById("autor-editorial");
     if (autorEd && t.editorial) autorEd.textContent = t.editorial;
 
@@ -218,9 +222,6 @@
       if (mark) mark.style.display = "none";
     };
     logoProbe.src = "img/logo-editorial.jpg";
-
-    var sello = document.getElementById("nav-editorial");
-    if (sello && t.editorial) sello.textContent = t.editorial;
 
     var heroPortada = document.getElementById("hero-portada");
     var primerLibro = (window.LIBROS || [])[0];
@@ -256,11 +257,20 @@
     if (waContacto) waContacto.href = link;
 
     var btnIg = document.getElementById("btn-instagram");
+    var btnIgAutor = document.getElementById("btn-instagram-autor");
+    var urlIg = t.instagram ? "https://www.instagram.com/" + t.instagram : "";
     if (btnIg) {
-      if (t.instagram) {
-        btnIg.href = "https://www.instagram.com/" + t.instagram;
+      if (urlIg) {
+        btnIg.href = urlIg;
       } else {
         btnIg.parentNode.removeChild(btnIg);
+      }
+    }
+    if (btnIgAutor) {
+      if (urlIg) {
+        btnIgAutor.href = urlIg;
+      } else {
+        btnIgAutor.parentNode.removeChild(btnIgAutor);
       }
     }
 

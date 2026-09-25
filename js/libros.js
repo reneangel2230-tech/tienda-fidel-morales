@@ -16,7 +16,8 @@
 var WHATSAPP_FIDEL = "50766159319"; // Fidel Morales (+507 6615-9319)
 
 var TIENDA = {
-  nombre: "Tienda Fidel Morales",
+  nombre: "Editorial La Inspiración",
+  subtitulo: "Libros de Fidel Morales D.",
   autor: "Fidel Morales D.",
   editorial: "Editorial La Inspiración",
   lema: "Técnicas prácticas para negociar y cerrar negocios.",
