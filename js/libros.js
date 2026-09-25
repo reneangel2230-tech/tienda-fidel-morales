@@ -20,7 +20,7 @@ var TIENDA = {
   autor: "Fidel Morales D.",
   editorial: "Editorial La Inspiración",
   lema: "Técnicas prácticas para negociar y cerrar negocios.",
-  instagram: "",      // opcional: usuario sin @, ej. "fidelmorales.autor"
+  instagram: "inspiracioneditorial",      // usuario sin @, ej. "fidelmorales.autor"
   email: "",          // opcional
   /* PAGO EN LINEA:
      - paypal: tu usuario de PayPal.me sin @ (ej. "FidelMorales"). Genera el

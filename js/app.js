@@ -255,6 +255,15 @@
     }
     if (waContacto) waContacto.href = link;
 
+    var btnIg = document.getElementById("btn-instagram");
+    if (btnIg) {
+      if (t.instagram) {
+        btnIg.href = "https://www.instagram.com/" + t.instagram;
+      } else {
+        btnIg.parentNode.removeChild(btnIg);
+      }
+    }
+
     var meta = document.getElementById("footer-meta");
     if (meta) {
       meta.textContent =
