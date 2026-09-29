@@ -5,6 +5,8 @@
 (function () {
   "use strict";
 
+  var IMG_Q = "?v=2"; // cambialo al renovar portadas para evitar cache del navegador
+
   function waLink(mensaje, numeroOverride) {
     var numero = numeroOverride || (window.WHATSAPP_FIDEL || "50700000000").replace(/[^0-9]/g, "");
     if (numero === "50700000000" || numero.length < 10) {
@@ -32,7 +34,7 @@
     tarjeta.className = "libro-card";
     tarjeta.setAttribute("data-libro", libro.id || ("libro-" + indice));
 
-    var estilosPortada = "background-image:url('" + portada + "'),linear-gradient(160deg,#2c3a55,#1c2333);";
+    var estilosPortada = "background-image:url('" + portada + IMG_Q + "'),linear-gradient(160deg,#2c3a55,#1c2333);";
 
     var capsHtml = "";
     if (libro.capitulos && libro.capitulos.length) {
@@ -143,7 +145,7 @@
         portadaDiv.style.aspectRatio =
           probePortada.naturalWidth + "/" + probePortada.naturalHeight;
       };
-      probePortada.src = "img/" + libro.portada;
+      probePortada.src = "img/" + libro.portada + IMG_Q;
     }
 
     var nombreFormato = 'formato-' + (libro.id || indice);
@@ -240,7 +242,7 @@
             probe.naturalWidth + "/" + probe.naturalHeight;
         };
         probe.onerror = portadaGenerica;
-        probe.src = "img/" + primerLibro.portada;
+        probe.src = "img/" + primerLibro.portada + IMG_Q;
       } else {
         portadaGenerica();
       }
