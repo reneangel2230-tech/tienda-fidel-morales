@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var IMG_Q = "?v=2"; // cambialo al renovar portadas para evitar cache del navegador
+  var IMG_Q = "?v=3"; // cambialo al renovar portadas para evitar cache del navegador
 
   function waLink(mensaje, numeroOverride) {
     var numero = numeroOverride || (window.WHATSAPP_FIDEL || "50700000000").replace(/[^0-9]/g, "");
