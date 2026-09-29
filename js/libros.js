@@ -156,5 +156,24 @@ var LIBROS = [
     formato: ["fisico", "digital"],
     resumen: "Un mensaje de esperanza, fe y perseverancia: una historia que recuerda que, aun en los momentos más difíciles, la actitud, la disciplina y la resiliencia abren el camino para volver a empezar. Fiel al estilo de Fidel Morales, combina vivencias humanas, valores esenciales e inspiración para quienes buscan un motivo para creer e insistir.",
     paraQuien: "Quienes necesitan un motivo para creer, insistir y confiar en que todo estará bien."
+  },
+  {
+    id: "nosotros-los-corruptos",
+    titulo: "Nosotros los Corruptos",
+    subtitulo: "Un viaje por la corrupción, del origen de la humanidad a Odebrecht",
+    genero: "Novela",
+    autor: "Fidel Morales D.",
+    editorial: "Editorial La Inspiración",
+    isbn: "",               // ASIN B0GC6M5V9Y (Amazon) - completa ISBN impreso si lo tienes
+    paginas: 0,
+    anio: 2026,
+    edicion: "1ª edición, 2026 · 7 capítulos",
+    portada: "nosotros-los-corruptos.jpg",
+    amazon: "https://amzn.eu/d/0go5wdxi",
+    precioFisico: 12.00,
+    precioDigital: 9.00,
+    formato: ["fisico", "digital"],
+    resumen: "Date un viaje por la corrupción desde los inicios de la humanidad hasta llegar a Odebrecht. Fidel Morales aborda la corrupción como un 'monstruo sin freno' que la humanidad carga como herencia desde sus albores: recorre dictaduras del mundo y democracias infiltradas por los mismos vicios, y demuestra que el mal no es exclusivo de los palacios presidenciales — se esconde también en la ignorancia que se abraza con resignación, en el interés mezquino de quien vota a cambio de un favor y en la desidia de quien mira hacia otro lado. 'La corrupción no es solo obra de los gobernantes: es el espejo más incómodo de toda una sociedad.'",
+    paraQuien: "Quienes quieren entender el origen y las raíces de la corrupción en la sociedad — y asomarse al espejo."
   }
 ];
